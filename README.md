@@ -9,7 +9,7 @@
 [<img src="https://img.shields.io/badge/Portfolio-%23000000.svg?&style=for-the-badge">](devrahularya.blogspot.com)
 <!-- **dev-rahul-arya/dev-rahul-arya** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile. -->
 
-Here are some ideas to get you started:
+Here is my basic introduction to get you started:
 - :school: I'm currently studing in ... G.B. Pant Engineering College, Delhi, India
 - 🔭 I’m currently working on ... Not working
 - 🌱 I’m currently learning ... React & Competitive Programming
