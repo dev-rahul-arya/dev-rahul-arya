@@ -21,7 +21,8 @@
             --background-light: #dce7ee;
             --text-light: #2c2e31;
             --card-bg-light: #ffffff;
-            --border-light: #cbd5e1; /* Darkened slightly for better visibility */
+            --border-light: #cbd5e1;
+            /* Darkened slightly for better visibility */
             --primary-light: #4c43ad;
             --primary-hover-light: #4338ca;
             --accent-light: #8b5cf6;
@@ -472,7 +473,8 @@
                     <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- Project cards will be injected here by JavaScript -->
                     </div>
-                    <p id="no-results" class="text-center text-xl mt-8 hidden text-gray-600 dark:text-gray-400">No projects found.</p>
+                    <p id="no-results" class="text-center text-xl mt-8 hidden text-gray-600 dark:text-gray-400">No
+                        projects found.</p>
                 </div>
 
                 <!-- Experience Content -->
@@ -578,8 +580,8 @@
                             </a>
                         </div>
 
-                        <form id="contact-form" action="mailto:rahularya0221@outlook.com" method="POST" enctype="text/plain"
-                            class="space-y-6">
+                        <form id="contact-form" action="mailto:rahularya0221@outlook.com" method="POST"
+                            enctype="text/plain" class="space-y-6">
                             <div>
                                 <label for="name"
                                     class="block text-sm font-bold mb-2 text-gray-800 dark:text-gray-300">Name</label>
@@ -686,6 +688,10 @@
                     items: ['Git', 'GitHub', 'MySQL']
                 },
                 {
+                    category: 'Non Technical Skills',
+                    items: ['Team Leadership', 'Teaching']
+                },
+                {
                     category: 'Currently Exploring',
                     items: ['React JS', 'React Native', 'Node JS', 'Express JS', 'MongoDB', 'Figma']
                 }
@@ -749,27 +755,42 @@
 
                 filteredProjects.forEach((project, index) => {
                     const card = document.createElement('div');
-                    card.className = 'animated-card card rounded-2xl overflow-hidden shadow-lg border-0 bg-white dark:bg-slate-800';
+
+                    // FIX 1: Added 'flex flex-col' to the card wrapper
+                    card.className = 'animated-card card rounded-2xl overflow-hidden shadow-lg border-0 bg-white dark:bg-slate-800 flex flex-col';
                     card.style.animationDelay = `${index * 100}ms`;
+
                     card.innerHTML = `
-                            <div class="relative h-48 overflow-hidden group">
-                                 <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Error';">
-                                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                                    <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="p-2 bg-white rounded-full hover:scale-110 transition-transform text-gray-900" aria-label="GitHub Link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                                    <a href="${project.live}" target="_blank" rel="noopener noreferrer" class="p-2 bg-white rounded-full hover:scale-110 transition-transform text-gray-900" aria-label="Live Demo"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-                                 </div>
-                            </div>
-                            <div class="p-6 flex flex-col h-full">
-                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">${project.title}</h3>
-                                <p class="mb-4 text-sm leading-relaxed flex-grow text-gray-700 dark:text-gray-400 font-medium">${project.description}</p>
-                                <div class="flex flex-wrap gap-2 mt-auto">
-                                    ${project.tags.map(tag => `<span class="text-xs font-semibold bg-gray-100 text-gray-800 dark:bg-slate-700/50 dark:text-gray-300 px-2.5 py-1 rounded-full border border-gray-200 dark:border-gray-600">${tag.charAt(0).toUpperCase() + tag.slice(1)}</span>`).join('')}
-                                </div>
-                            </div>`;
+            <div class="relative h-48 overflow-hidden group shrink-0">
+                 <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Error';">
+                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                    <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="p-2 bg-white rounded-full hover:scale-110 transition-transform text-gray-900" aria-label="GitHub Link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <a href="${project.live}" target="_blank" rel="noopener noreferrer" class="p-2 bg-white rounded-full hover:scale-110 transition-transform text-gray-900" aria-label="Live Demo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                 </div>
+            </div>
+            
+            <div class="p-6 flex flex-col flex-1">
+                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">${project.title}</h3>
+                <p class="mb-4 text-sm leading-relaxed text-gray-700 dark:text-gray-400 font-medium">${project.description}</p>
+                
+                <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                    ${(project.tags || []).map(tag => `
+                        <span class="text-xs font-bold px-2.5 py-1 rounded-full 
+                             bg-indigo-50 text-indigo-700 border border-indigo-100 
+                             dark:bg-indigo-900/30 dark:text-indigo-300 dark:border-indigo-800/50">
+                            ${tag}
+                        </span>
+                    `).join('')}
+                </div>
+            </div>`;
                     projectGrid.appendChild(card);
                 });
             };
-
+            
             const renderCertificates = () => {
                 if (!certificateGrid) return;
                 certificateGrid.innerHTML = '';
@@ -847,11 +868,11 @@
             // --- EVENT LISTENERS ---
             if (searchInput) searchInput.addEventListener('input', e => { currentSearchTerm = e.target.value.toLowerCase(); renderProjects(); });
             if (filterContainer) filterContainer.addEventListener('click', e => { if (e.target.classList.contains('filter-btn')) { filterContainer.querySelector('.filter-btn.active').classList.remove('active'); e.target.classList.add('active'); currentFilter = e.target.dataset.filter; renderProjects(); } });
-            
-            if (tabContainer) tabContainer.addEventListener('click', e => { 
-                if (e.target.classList.contains('tab-btn')) { 
-                    const targetTab = e.target.dataset.tab; 
-                    
+
+            if (tabContainer) tabContainer.addEventListener('click', e => {
+                if (e.target.classList.contains('tab-btn')) {
+                    const targetTab = e.target.dataset.tab;
+
                     // Reset all buttons
                     tabContainer.querySelectorAll('.tab-btn').forEach(btn => {
                         btn.classList.remove('active', 'bg-indigo-600', 'text-white', 'shadow-md');
@@ -860,11 +881,11 @@
 
                     // Set active button
                     e.target.classList.add('active', 'bg-indigo-600', 'text-white', 'shadow-md');
-                    
+
                     // Switch Content
-                    tabContentContainer.querySelector('.tab-content.active').classList.remove('active'); 
-                    document.getElementById(targetTab).classList.add('active'); 
-                } 
+                    tabContentContainer.querySelector('.tab-content.active').classList.remove('active');
+                    document.getElementById(targetTab).classList.add('active');
+                }
             });
 
             if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
@@ -875,10 +896,10 @@
             renderCertificates();
             renderSkills();
             renderExperience();
-            
+
             // Set initial active tab state manually to match the new style
             const activeBtn = tabContainer.querySelector('.tab-btn.active');
-            if(activeBtn) {
+            if (activeBtn) {
                 activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
             }
         });
