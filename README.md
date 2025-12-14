@@ -16,7 +16,7 @@ Here is my basic introduction to get you started:
 - 👯 I’m looking to collaborate on ... Hackathons
 - 🤔 I’m looking for help with ... LIFE 
 - 💬 Ask me about ... What ever.... :laughing:
-- 😄 Pronouns: ... He
+- 😄 Pronouns: ... He/Him
 - ⚡ Fun fact: ... Listens SAD Songs when get bored
 <br/>
 
@@ -52,12 +52,19 @@ Here is my basic introduction to get you started:
 </div>
 <br>
 
-<details>
-  <summary>:zap: Github Stats</summary>
-  <img src="https://github-readme-stats.vercel.app/api?username=dev-rahul-arya&&show_icons=true&title_color=222222&icon_color=03A87C&text_color=333333&bg_color=ffffff">
-</details>
+### :zap: Github Streaks:
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=dev-rahul-arya&" alt="dev-rahul-arya" /></p>
+<br>
 
-<details>
-  <summary>:zap: Languages Used</summary>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dev-rahul-arya&layout=compact&bg_color=ffffff&text_color=333333">
-</details>
+### :zap: Github Stats:
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=dev-rahul-arya&show_icons=true&locale=en" alt="dev-rahul-arya" /></p>
+<br>
+
+<!--
+### :zap: Languagse Used:
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=dev-rahul-arya&show_icons=true&locale=en&layout=compact" alt="dev-rahul-arya" /></p>
+-->
+
+
+
+
